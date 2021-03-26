@@ -1,3 +1,7 @@
+body{
+    font-family: Roboto;
+}
+
 .all{    
     /* background-color: red; */
     width: 100%;
@@ -115,8 +119,6 @@
     margin-left: auto;
     width: calc(100% - 41% - 5%);
     display: flex;
-    /* flex-wrap: wrap; */
-    /* align-content: center; */
     align-items: center;
     justify-content: space-around;
     position: relative;
@@ -130,8 +132,147 @@
     background-image: url("../media/stories_background.jpg");
     background-size: 66px;
     position: relative;
-    /* margin-left: px; */
 }
+
+.profile-info{
+    height: 115px;
+    margin-top: 30px;
+    margin-left: 30px;
+    width: calc(41% + 5%);
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.profile-info div{
+    height: 56px;
+    display: block;
+    position: absolute;
+    top: 35%;
+    left: calc(20px + 56px);
+}
+
+.others-infos{
+    /* left:-50%; */
+    left: calc(3% + 30px);
+    height: 115px;
+    width: calc(50%);
+    display: flex;
+    align-items: center;
+    position: absolute;
+    border: 1px solid red;
+    display: flex;
+    flex-direction: column;
+    /* margin-right: 41%; */
+}
+.sugestoes p{
+    color: #8e8e8e;
+    font-size: 12px;
+    font-weight: 500;
+    font-style: normal;
+}
+.sugestoes span{
+    color: #262626;
+    font-size: 12px;
+    font-weight: 500;
+    font-style: normal;
+    text-align: right;
+    position:absolute;
+    right:0;
+}
+
+.sugestoes{
+    /* top: 0; */
+    width: calc(100%);
+    display: flex;
+    /* position: absolute; */
+    border: 1px solid blue;
+}
+
+.profile-info img{
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: calc(3% + 30px);
+    margin: -28px 0 0 -28px;
+}
+
+/* other-info! */
+/* other-info! */
+.other-profile-info{
+    height: 115px;
+    /* top:0; */
+    /* margin-top: 30px; */
+    /* margin-left: 30px; */
+    width: calc(41% + 5%);
+    display: flex;
+    align-items: center;
+    position: absolute;
+    left:0;
+    top:-10px;
+    
+}
+
+.other-profile-info div{
+    height: 56px;
+    /* width: 100%; */
+    display: block;
+    position: absolute;
+    top: 30%;
+    left: calc(20px + 32px);
+}
+
+.other-profile-info img{
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: calc(3% + 30px);
+    margin: -28px 0 0 -28px;
+    /* border: 3px solid red; */
+}
+
+.other-profile-info p{
+    /* color: #8e8e8e; */
+    font-size: 12px;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.container{
+    position: absolute;
+    display: inline-block;
+    height:50px;
+    width: 200px;
+    margin-top: 32px;
+}
+.container img{
+}
+
+.seguir{
+    /* color: #262626; */
+    
+    font-size: 12px;
+    font-weight: 500;
+    font-style: normal;
+    text-align: right;
+    /* align-items: center; */
+    /* text-align: center; */
+    display: block;
+    /* position:absolute; */
+    /* right:0; */
+    margin-top:5%;
+    margin-left:80%;
+}
+
+/* other-info! */
+/* other-info! */
+
 
 .stories p {
     position: relative;
@@ -186,6 +327,8 @@
     height:1200px;
     position:fixed;
     top: 50px;
+    display: flex;
+    flex-direction: column;
 }
 
 .posts{
