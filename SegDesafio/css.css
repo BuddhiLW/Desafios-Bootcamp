@@ -29,6 +29,13 @@
     justify-content: center;
 }
 
+.menu-blocks-feed{
+    display: inline-block;
+    /* display: flex; */
+    justify-content: left;
+    position:relative;
+}
+
 .logo{
     position:relative;
     margin-right: 20vw;
@@ -47,6 +54,14 @@
     flex-grow:1;
 }
 
+.comment-input{
+    display: flex;
+    flex-wrap: wrap;
+    /* width: 50%; */
+    flex-shrink:3;
+    margin-left: 25px;
+}
+
 .nav-icons{
     /* background-color: blue; */
     height:40px;
@@ -59,6 +74,20 @@
     display: flex;
     align-items: center;
 }
+.nav-icons-feed{
+    /* background-color: blue; */
+    height:40px;
+    width: 100px;
+    display:flex;
+    /* margin: 0 20px; */
+    position:relative;
+    /* right: 1%; */
+    left:0;
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: space-between;
+    align-items: center;
+}
 
 .nav-icon{
     /* background-color: yellowgreen; */
@@ -66,6 +95,15 @@
     width: 40px;
     align-items: center;
     /* height:80%; */
+}
+
+.nav-icon-feed{
+    /* background-color: yellowgreen; */
+    height:40px;
+    width: 40px;
+    align-items: center;
+    /* height:80%; */
+    /* position:absolute; */
 }
 
 
@@ -157,18 +195,20 @@
     margin-right: 41%;
     top: 30px;
     display: flex;
-    flex-direction: column;
-    /* justify-content: space-between; */
-    position:relative;
+    flex-direction: column;    
+    justify-content: space-evenly;
+    margin-top:30px;
+    margin-bottom: 120px;
 }
 
 .post{
     /* background-color: blue; */
-    margin-top: 30px;
-    margin-bottom: 30px;
+    position:relative;
+    /* margin-top: 30px; */
+    margin-bottom: calc(20vh);
     margin-left: auto;
     margin-right: auto;
-    height: calc(130vh - 30px);
+    height: calc(125vh - 50px);
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -176,14 +216,15 @@
 
 
 .head-post{
-    background-color: white;
+    background-color: #fff;
     height:calc(100vh - 30px - 5px - 85vh);
     width: 100%;
     margin: 0;
     position: relative;
     border: 1px solid #dbdbdb;
     border-radius: 3px 3px 0px 0px;
-    
+    display: flex;
+    flex-wrap: wrap;
 }
 
 div .perfil{
@@ -206,15 +247,36 @@ div .perfil{
     margin: -27% 0 0 -25%;
 }
 
-.head-post p{
+.head-reactions p{
+    margin-left: 10px;
+    position: relative;
+    display: inline-block;
+}
+.perfil-likes{
+    /* right: 2%; */
+    bottom:10px;
+    left: 5px;
+    display: flex;
+    flex-wrap:wrap;
+    /* justify-content: ; */
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
     position: absolute;
-    top: 0;
-    left: 70px;
+    /* margin-bottom:0px; */
+}
+
+.head-post p{
+    /* position: absolute; */
+    /* top: 0; */
+    /* left: 0; */
+    margin:30px 5px;
     text-align: center;
-    vertical-align: middle;
     font-size: 15 px;
     font-family: Roboto;
-    line-height: calc(100vh - 30px - 5px - 85vh);
+    /* margin: 3% 0 0 7%; */
+    /* line-height: calc(100vh - 30px - 5px - 85vh); */
 }
 
 .head-post ion-icon{
@@ -239,6 +301,13 @@ div .perfil{
     width: 100%;
     padding-top: 100%;
 }
+.photo-area3{
+    /* background-color: black; */
+    background-image: url(../media/pedrao-cybercodelico.jpg);
+    background-size: cover;
+    width: 100%;
+    padding-top: 100%;
+}
 
 .post iframe{
     /* background-color: black; */
@@ -255,24 +324,32 @@ div .perfil{
 /* } */
 
 .comment-area{
-    background-color: cyan;
+    /* background-color: cyan; */
     flex-grow:1;
     width: 100%;
     display: flex;
     flex-flow: column;
+    border-right: 1px solid #dbdbdb;
+    border-left: 1px solid #dbdbdb;
+    border-bottom: 1px solid #dbdbdb;
+    border-radius: 0px 0px 3px 3px;
 }
 
 /* icons + likes */
 .head-reactions{
-    background-color: white;
+    background-color: #fff;
     height: calc(100vh - 90vh);
     width: 100%;
-    display: inline-block;
+    display: flex;
     position:relative;
-    /* flex-wrap: wrap; */
+    flex-wrap: wrap;
+    /* border: 1p */
+    border-right: 1px solid #dbdbdb;
+    border-left: 1px solid #dbdbdb;
+    /* border-radius: 0px 0px 3px 3px; */
     /* flex-direction: row; */
 }
-.head-reactions .nav-icons{
+.head-reactions .nav-icons-feed{
     /* background-color: blue; */
     height:40px;
     width: 100px;
@@ -280,27 +357,33 @@ div .perfil{
     /* margin: 0 auto; */
     justify-content: space-between;
     position:absolute;
-    right: 85%;
-    bottom:30%;
+    right: 77%;
+    bottom:35%;
     display: flex;
     align-items: center;
 }
 
 .head-reactions .nav-icon{
-    /* background-color: yellowgreen; */
     height:30px;
     width: 30px;
     align-items: center;
-    /* height:80%; */
 }
-.head-reactions .nav-icon:last-child{
+
+.head-reactions p{
+    position:absolute;
+    left: 20px;
+    bottom:20%;
+}
+
+.last{
     /* background-color: yellowgreen; */
     position: absolute;
-    right:-600px;
-    top:5px;
+    margin-left: calc(100% - 40px);
+    margin-top:10px;
     height:33px;
     width: 33px;
     align-items: center;
+    /* box-sizing: 20px; */
     /* height:80%; */
 }
 
@@ -308,21 +391,26 @@ div .perfil{
 }
 
 .comment-made{
-    background-color: lightpink;
+    background-color: #FFF;
     width: 100%;
     flex-grow:3;
     margin-bottom: 5px;
     /* border:1px red; */
-    border-bottom: 1px solid #FF6461;
+    border-bottom: 1px solid #dbdbdb;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.comment-made p{
+    margin: 5px 10px;
 }
 
 .comment-make{
-    background-color: violet;
+    /* background-color: violet; */
     width: 100%;
     flex-grow:1;
     display: flex;
     margin-bottom: 5px;
-    border-bottom: 1px solid red;
+    /* border-bottom: 1px solid #dbdbdb; */
 }
 
 .comment-input{
@@ -364,6 +452,8 @@ div .perfil{
     -moz-border-radius: 5px;
     border-radius: 5px;
     padding: 0 20px;
+    width: 70%;
+    /* margin-right: 20px */
     /* margin-left: 20px; */
     font-size: 16px;
     color: #666;
@@ -384,6 +474,13 @@ ion-icon{
     height:80%;
 }
 
+emp{
+    color: rgb(7,86,176);
+}
+.view-comments{
+    color: rgb(166,152,156);
+}
+
 
 @media screen and (max-width: 950px) {
 
@@ -394,7 +491,7 @@ ion-icon{
     }
 
     .menu{
-	background-color: darkviolet;
+	/* background-color: darkviolet; */
 	width: 100%;
 	height: 50px;
 	position: sticky;
@@ -408,9 +505,18 @@ ion-icon{
 
     .search-input{
 	display: flex;
+	/* align-content:center; */
 	flex-wrap: wrap;
 	width: 40px;
-	flex-grow:1;
+	flex-grow:2;
+    }
+
+    .menu-blocks:nth-child(2){
+	position: absolute;
+	align-self: center;
+	left: 33%;
+	width: 25%;
+	/* background-color: red; */
     }
 
     .side-bar{
@@ -419,7 +525,7 @@ ion-icon{
     }
 
     .stories{
-	background-color: red;
+	/* background-color: red; */
 	/* height: 115px; */
 	margin-top: 30px;
 	margin-right: auto;
@@ -430,7 +536,7 @@ ion-icon{
 	align-content: center;
     }
     .posts{
-	background-color: orange;
+	/* background-color: orange; */
 	width: 614px;
 	margin-left: auto;
 	margin-right: auto;
@@ -450,7 +556,7 @@ ion-icon{
     }
 
     .menu{
-	background-color: darkviolet;
+	/* background-color: darkviolet; */
 	width: 100%;
 	height: 50px;
 	position: sticky;
@@ -463,7 +569,7 @@ ion-icon{
     }
 
     .search-input{
-	display: flex;
+	display: none;
 	flex-wrap: wrap;
 	width: 40px;
 	flex-grow:1;
@@ -475,7 +581,7 @@ ion-icon{
     }
 
     .stories{
-	background-color: red;
+	/* background-color: red; */
 	/* height: 115px; */
 	margin-top: 30px;
 	margin-right: auto;
@@ -486,7 +592,7 @@ ion-icon{
 	align-content: center;
     }
     .posts{
-	background-color: orange;
+	/* background-color: orange; */
 	width: 100%;
 	margin-left: auto;
 	margin-right: auto;
