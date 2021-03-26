@@ -153,18 +153,24 @@ body{
 }
 
 .others-infos{
-    /* left:-50%; */
-    left: calc(3% + 30px);
-    height: 115px;
+    left: calc(30px);
     width: calc(50%);
-    display: flex;
-    align-items: center;
+    height: 100%;
     position: absolute;
-    border: 1px solid red;
+    /* border: 1px solid red; */
     display: flex;
     flex-direction: column;
-    /* margin-right: 41%; */
 }
+
+.others-infos span{
+    position: absolute;
+    height: 50%;
+    right: 0;
+}
+
+/* .others-infos img{ */
+/* } */
+
 .sugestoes p{
     color: #8e8e8e;
     font-size: 12px;
@@ -182,11 +188,9 @@ body{
 }
 
 .sugestoes{
-    /* top: 0; */
     width: calc(100%);
     display: flex;
-    /* position: absolute; */
-    border: 1px solid blue;
+    height:12px;
 }
 
 .profile-info img{
@@ -202,18 +206,23 @@ body{
 
 /* other-info! */
 /* other-info! */
-.other-profile-info{
-    height: 115px;
-    /* top:0; */
-    /* margin-top: 30px; */
-    /* margin-left: 30px; */
-    width: calc(41% + 5%);
+.other-profile-info:nth-child(odd){
+    height: 55px;
+    width: calc(100%);
     display: flex;
     align-items: center;
-    position: absolute;
+    position: relative;
     left:0;
-    top:-10px;
-    
+    top:5px;
+}
+.other-profile-info:nth-child(even){
+    height: 45px;
+    width: calc(100%);
+    display: flex;
+    align-items: center;
+    position: relative;
+    left:0;
+    top:5px;
 }
 
 .other-profile-info div{
@@ -225,13 +234,14 @@ body{
     left: calc(20px + 32px);
 }
 
-.other-profile-info img{
+.others-infos img{
     width: 32px;
     height: 32px;
     border-radius: 50%;
     display: block;
     position: absolute;
-    top: 50%;
+    /* top (center) = 50% space (pseudo-center) + 12px from the sugestion text */
+    top: calc(50% + 12px); 
     left: calc(3% + 30px);
     margin: -28px 0 0 -28px;
     /* border: 3px solid red; */
@@ -269,6 +279,28 @@ body{
     margin-top:5%;
     margin-left:80%;
 }
+.rights-info1{
+    margin-top: 18px;
+    font-family: Roboto;
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 13px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #c7c7c7;
+}
+.rights-info2{
+    /* margin-top: 18px; */
+    font-family: Roboto;
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 13px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #c7c7c7;
+}
 
 /* other-info! */
 /* other-info! */
@@ -301,6 +333,34 @@ body{
     top: 50%;
     left: 50%;
     margin: -28px 0 0 -28px;
+}
+
+.shuffle{
+    width: 27px;
+    height: 27px;
+    border-radius: 50%;
+    background: lightcoral;
+    opacity: 0.7;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    margin: -16px 0 0 -16px;
+    padding:1px;
+    border: 2px dashed #131313;
+}
+
+.shuffle:hover{
+    width: 27px;
+    height: 27px;
+    border-radius: 50%;
+    background: lightcoral;
+    opacity: 1;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    margin: -16px 0 0 -16px;
+    padding:1px;
+    border: 2px dashed #131313;
 }
 
 /* .stories div:last-child{ */
@@ -569,12 +629,13 @@ div .perfil{
 /* } */
 .icons{
     position:relative;
-    width:30px;
+    width:45px;
 }
 .icon-instagram{
     margin-left: 5px;
-    margin-top: auto;
+    margin-top: 5px;
     height:30px;
+    align-content:center;
 }
 
 .logo-border{
@@ -627,6 +688,16 @@ emp{
 
 @media screen and (max-width: 950px) {
 
+    .icon-instagram{
+	margin-left: 5px;
+	margin-top: 5px;
+	height:25px;
+	align-content:center;
+    }
+    /* .icons{ */
+    /* 	    width:35px; */
+    /* } */
+    
     .menu-blocks{
 	display: flex;
 	flex-wrap: wrap;
@@ -724,25 +795,17 @@ emp{
     }
 
     .stories{
-	/* background-color: red; */
-	/* height: 115px; */
 	margin-top: 30px;
 	margin-right: auto;
 	margin-left: auto;
 	width: 100%;
-	/* display: flex; */
-	/* flex-wrap: wrap; */
 	align-content: center;
     }
+    
     .posts{
-	/* background-color: orange; */
 	width: 100%;
 	margin-left: auto;
 	margin-right: auto;
-	/* top: 30px; */
-	/* display: flex; */
-	/* flex-direction: column; */
-	/* justify-content: space-between; */
     }
 }
 
