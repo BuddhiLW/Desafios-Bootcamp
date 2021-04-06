@@ -127,7 +127,15 @@ Each listed item (li) will have an image containing the parrot
   }
 #+end_src
 
-Let's change the background to a yellowish tone
+**** first margin (~10 view)
+#+begin_src css :tangle ../css/layout.css :mkdirp yes
+  ul li:first-of-type{
+      margin-left: 10%;
+  }
+#+end_src
+
+*** Background (body)
+Let's change the background to a redish tone
 
 #+begin_src css :tangle ../css/layout.css :mkdirp yes
   body {
@@ -139,6 +147,11 @@ Let's change the background to a yellowish tone
 Now, we will change the heading to the desired font and size
 
 #+begin_src css :tangle ../css/layout.css :mkdirp yes
+  @font-face{
+      font-family: 'Kramer';
+      src: url('../font/KramerRegular.ttf');
+  }
+
   h1 {
       font-family: Roboto;
       font-size: 56px;
@@ -147,9 +160,29 @@ Now, we will change the heading to the desired font and size
       text-shadow: #AA000d60 0px 0px 5px;
   }
 
+  h1::first-letter{
+      font-size:125%;
+      font-family: Kramer;
+      color: #AA000d60;
+      text-shadow: #F6C700 1px 1px 15px;
+  }
+
   .center {
       box-sizing: border-box;
       text-align: center;
       margin: 40px auto 47px auto;
   }
 #+end_src
+
+** Mobile adjustment
+
+#+begin_src css :tangle ../css/layout.css :mkdirp yes
+  @media screen and (max-width: 335px){
+      ul {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+      }
+  }
+#+end_src
+

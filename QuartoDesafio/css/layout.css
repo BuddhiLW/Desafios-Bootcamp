@@ -13,8 +13,17 @@ li {
     margin: 17px;
 }
 
+ul li:first-of-type{
+    margin-left: 10%;
+}
+
 body {
     background-color: #AA000d30;
+}
+
+@font-face{
+    font-family: 'Kramer';
+    src: url('../font/KramerRegular.ttf');
 }
 
 h1 {
@@ -25,8 +34,23 @@ h1 {
     text-shadow: #AA000d60 0px 0px 5px;
 }
 
+h1::first-letter{
+    font-size:125%;
+    font-family: Kramer;
+    color: #AA000d60;
+    text-shadow: #F6C700 1px 1px 15px;
+}
+
 .center {
     box-sizing: border-box;
     text-align: center;
     margin: 40px auto 47px auto;
+}
+
+@media screen and (max-width: 335px){
+    ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 }
