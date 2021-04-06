@@ -2,3 +2,31 @@ ul {
     display: flex;
     flex-direction: row;
 }
+
+li {
+    width: 117px;
+    height: 146px;
+    background-image: url("../img/laughting-buddha-fit-nobg.png");
+    background-color: #fdde2d70;
+    border: 1px solid #AA0000;
+    border-radius: 10px;
+    margin: 17px;
+}
+
+body {
+    background-color: #AA000d30;
+}
+
+h1 {
+    font-family: Roboto;
+    font-size: 56px;
+    font-weight: 700;
+    color: #F6C700;
+    text-shadow: #AA000d60 0px 0px 5px;
+}
+
+.center {
+    box-sizing: border-box;
+    text-align: center;
+    margin: 40px auto 47px auto;
+}

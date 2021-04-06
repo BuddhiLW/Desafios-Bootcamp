@@ -13,6 +13,7 @@
 #+begin_src html :tangle ../html/index.html :mkdirp yes
   <!DOCTYPE html>
   <html lang="en">
+
   <head>
       <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -21,8 +22,8 @@
       <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
       <link rel="stylesheet" href="../css/reset.css">
       <link rel="stylesheet" href="../css/layout.css">
-      <link rel="stylesheet" href="../css/cards.css">
-      <link rel="stylesheet" href="../css/dynamic.css">
+      <!-- <link rel="stylesheet" href="../css/cards.css"> -->
+      <!-- <link rel="stylesheet" href="../css/dynamic.css"> -->
       <title>Parrots</title>
   </head>
 #+end_src
@@ -30,14 +31,14 @@
 ** Body
 #+begin_src html :tangle ../html/index.html :mkdirp yes
   <body>
-      <h1>PARROT CARD GAME</h1>
+      <h1 class="center">PARROT CARD GAME</h1>
       <ul>
-          <li>parrot1</li>
-          <li>parrot2</li>
+          <li></li>
+          <li></li>
       </ul>
 
       <ul>
-          <li>parrot2</li>
+          <li></li>
       </ul>
   </body>
 
@@ -45,10 +46,110 @@
 #+end_src
 
 * CSS
+** Reset
+#+begin_src css :tangle ../css/reset.css :mkdirp yes
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+#+end_src
+
 ** Layout
+*** ul
+
+There will be a division of rows compatible with how many cards the player chooses to play with.
+Each row will have cards. Therefore, the layout must follow:
+
 #+begin_src css :tangle ../css/layout.css :mkdirp yes
   ul {
       display: flex;
       flex-direction: row;
+  }
+#+end_src
+
+*** li
+
+Each listed item (li) will have an image containing the parrot
+
+#+begin_src css :tangle ../css/layout.css :mkdirp yes
+  li {
+      width: 117px;
+      height: 146px;
+      background-image: url("../img/laughting-buddha-fit-nobg.png");
+      background-color: #fdde2d70;
+      border: 1px solid #AA0000;
+      border-radius: 10px;
+      margin: 17px;
+  }
+#+end_src
+
+Let's change the background to a yellowish tone
+
+#+begin_src css :tangle ../css/layout.css :mkdirp yes
+  body {
+      background-color: #AA000d30;
+  }
+#+end_src
+
+*** h1
+Now, we will change the heading to the desired font and size
+
+#+begin_src css :tangle ../css/layout.css :mkdirp yes
+  h1 {
+      font-family: Roboto;
+      font-size: 56px;
+      font-weight: 700;
+      color: #F6C700;
+      text-shadow: #AA000d60 0px 0px 5px;
+  }
+
+  .center {
+      box-sizing: border-box;
+      text-align: center;
+      margin: 40px auto 47px auto;
   }
 #+end_src
