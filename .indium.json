@@ -1,0 +1,9 @@
+{
+    "configurations": [{
+        "name": "Web Browser",
+        "type": "chrome",
+        "url": "QuartoDesafio/html/index.html",
+	"port": "9222",
+	"root": "src"
+    }]    
+}

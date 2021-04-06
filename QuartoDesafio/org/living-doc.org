@@ -1,0 +1,54 @@
+#+AUTHOR: BuddhiLW
+#+STARTUP: latexpreview
+#+PROPERTY: header-args:js :tangle ../js/prompt-logic.js :mkdirp yes
+
+* JS
+#+begin_src js :tangle ../js/prompt-logic.js
+
+#+end_src
+
+* HTML
+
+** Head
+#+begin_src html :tangle ../html/index.html :mkdirp yes
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="preconnect" href="https://fonts.gstatic.com">
+      <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="../css/reset.css">
+      <link rel="stylesheet" href="../css/layout.css">
+      <link rel="stylesheet" href="../css/cards.css">
+      <link rel="stylesheet" href="../css/dynamic.css">
+      <title>Parrots</title>
+  </head>
+#+end_src
+
+** Body
+#+begin_src html :tangle ../html/index.html :mkdirp yes
+  <body>
+      <h1>PARROT CARD GAME</h1>
+      <ul>
+          <li>parrot1</li>
+          <li>parrot2</li>
+      </ul>
+
+      <ul>
+          <li>parrot2</li>
+      </ul>
+  </body>
+
+  </html>
+#+end_src
+
+* CSS
+** Layout
+#+begin_src css :tangle ../css/layout.css :mkdirp yes
+  ul {
+      display: flex;
+      flex-direction: row;
+  }
+#+end_src
