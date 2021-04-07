@@ -31,37 +31,47 @@ If the card is even and more than four and less than 14
 ** Create Cards
 
 *** Helper funtions
-#+begin_src js :tangle ../js/prompt-logic.js
-  let li = document.createElement('li');
-  var ul = querier('ul');
 
-  var querier = e => document.querySelector(e);
-  var populateWith = e => li => e.appendChild(li);
++ =querier= is a sugar syntax for "document.querySelector".
++ =populateWith= takes an element and a child you want to adhere to it (in our case =li=) - although the names chosen are conventions, here.
+
+#+begin_src js :tangle ../js/prompt-logic.js
+  var querier = (e) => document.querySelector(e);
+  var populateWith = (e) => (li) => e.appendChild(li.cloneNode(true));
+#+end_src
+
+*** Helper terms
+
++ We will use the queried =ul=. And, we will create li DOM elements.
+
+#+begin_src js :tangle ../js/prompt-logic.js
+  var ul = querier('ul');
+  let li = document.createElement('li');
 #+end_src
 
 *** Iteration
+
+Here, we want to populate the Unordered List (=ul=) of our HTML with cards. So, we use the populate function which loops over the inputed =number= of cards, using =populateWith= to populate our list.
+
 #+begin_src js :tangle ../js/prompt-logic.js
-  var populateLi = number => function(number){
-      var values = ul;
-      var accumulate = function (li){
-          if (values.length < number){
-              populateWith(values)(li);
-              return values;
-          }else{
-              return values;
-          }
-          return accumulate;
-      }; 
+  var populate = (number) => {
+    console.log(number);
+    for (var i = 0; i < number; i++) {
+      populateWith(ul)(li);
+    }
   };
-  // for (var i = 0; i < number; i++) {
-  //     return populateWith(ul)(li);
-  // }
 #+end_src
 
 *** Call
+
+Here we, again, sugar syntax =populate= to =createCards=, which is almost a type annotation. Then, finally, we declare the game initializer.
+
 #+begin_src js :tangle ../js/prompt-logic.js
-  var createCards = number => populate(number);
+  var createCards = (number) => populate(number);
+
+  initGame();
 #+end_src
+
 
 * HTML
 
