@@ -13,14 +13,20 @@ var ul = querier('ul');
 var querier = e => document.querySelector(e);
 var populateWith = e => li => e.appendChild(li);
 
-var populate = number => function(number){
-    var values;
-
-    
-    
-    for (var i = 0; i < number; i++) {
-        return populateWith(ul)(li);
-    }
+var populateLi = number => function(number){
+    var values = ul;
+    var accumulate = function (li){
+        if (values.length < number){
+            populateWith(values)(li);
+            return values;
+        }else{
+            return values;
+        }
+        return accumulate;
+    }; 
 };
+// for (var i = 0; i < number; i++) {
+//     return populateWith(ul)(li);
+// }
 
 var createCards = number => populate(number);

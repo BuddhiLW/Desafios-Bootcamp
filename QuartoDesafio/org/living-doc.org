@@ -41,11 +41,21 @@ If the card is even and more than four and less than 14
 
 *** Iteration
 #+begin_src js :tangle ../js/prompt-logic.js
-var populate = number => function(number){
-    for (var i = 0; i < number; i++) {
-        return populateWith(ul)(li2);
-    }
-};
+  var populateLi = number => function(number){
+      var values = ul;
+      var accumulate = function (li){
+          if (values.length < number){
+              populateWith(values)(li);
+              return values;
+          }else{
+              return values;
+          }
+          return accumulate;
+      }; 
+  };
+  // for (var i = 0; i < number; i++) {
+  //     return populateWith(ul)(li);
+  // }
 #+end_src
 
 *** Call
