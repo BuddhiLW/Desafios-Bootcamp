@@ -3,9 +3,36 @@
 #+PROPERTY: header-args:js :tangle ../js/prompt-logic.js :mkdirp yes
 
 * JS
-#+begin_src js :tangle ../js/prompt-logic.js
 
+** Game initializer
+#+begin_src js :tangle ../js/prompt-logic.js
+  var initGame = () => filterCards(howMany());
 #+end_src
+
+** How many cards?
+
+Prompt the player asking for inputs
+
+#+begin_src js :tangle ../js/prompt-logic.js
+  var howMany = () => prompt("With how many cards you wish to play with?");
+#+end_src
+
+** Filter condition
+
+If the card is even and more than four and less than 14
+
+#+begin_src js :tangle ../js/prompt-logic.js
+  var filterCards = number =>
+      (number % 2 === 0 && (number > 4 && number < 14))
+      ? createCards(number)
+      : initGame();
+#+end_src
+
+** Create Cards
+#+begin_src js :tangle ../js/prompt-logic.js
+  var createCards = x => x;
+#+end_src
+
 
 * HTML
 
@@ -31,7 +58,7 @@
 ** Body
 #+begin_src html :tangle ../html/index.html :mkdirp yes
   <body>
-      <h1 class="center">PARROT CARD GAME</h1>
+      <h1 class="center">TAROT CARD GAME</h1>
       <ul>
           <li></li>
           <li></li>
