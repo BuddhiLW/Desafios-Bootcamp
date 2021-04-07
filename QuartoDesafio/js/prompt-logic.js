@@ -7,4 +7,20 @@ var filterCards = number =>
     ? createCards(number)
     : initGame();
 
-var createCards = x => x;
+let li = document.createElement('li');
+var ul = querier('ul');
+
+var querier = e => document.querySelector(e);
+var populateWith = e => li => e.appendChild(li);
+
+var populate = number => function(number){
+    var values;
+
+    
+    
+    for (var i = 0; i < number; i++) {
+        return populateWith(ul)(li);
+    }
+};
+
+var createCards = number => populate(number);

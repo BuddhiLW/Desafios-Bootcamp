@@ -29,10 +29,29 @@ If the card is even and more than four and less than 14
 #+end_src
 
 ** Create Cards
+
+*** Helper funtions
 #+begin_src js :tangle ../js/prompt-logic.js
-  var createCards = x => x;
+  let li = document.createElement('li');
+  var ul = querier('ul');
+
+  var querier = e => document.querySelector(e);
+  var populateWith = e => li => e.appendChild(li);
 #+end_src
 
+*** Iteration
+#+begin_src js :tangle ../js/prompt-logic.js
+var populate = number => function(number){
+    for (var i = 0; i < number; i++) {
+        return populateWith(ul)(li2);
+    }
+};
+#+end_src
+
+*** Call
+#+begin_src js :tangle ../js/prompt-logic.js
+  var createCards = number => populate(number);
+#+end_src
 
 * HTML
 
@@ -60,13 +79,8 @@ If the card is even and more than four and less than 14
   <body>
       <h1 class="center">TAROT CARD GAME</h1>
       <ul>
-          <li></li>
-          <li></li>
       </ul>
 
-      <ul>
-          <li></li>
-      </ul>
   </body>
 
   </html>
