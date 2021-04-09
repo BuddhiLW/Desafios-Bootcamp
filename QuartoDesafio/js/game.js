@@ -79,7 +79,7 @@ function select(e) {
         againP();
     }
     var unturnP = () => twoActiveP(active);
-    setTimeout(unturnP, 500);
+    setTimeout(unturnP, 1000);
 };
 
 var endInteration = () => {
