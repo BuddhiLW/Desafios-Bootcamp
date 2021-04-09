@@ -1,27 +1,29 @@
 ul {
     display: flex;
-    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: auto;
+    position: absolute;
+    left: 10%;
+    top: calc(56px + 17px + 10px + 17px + 30px);
 }
 
 li {
+    min-width: 117px;
     width: 117px;
     height: 146px;
-    background-image: url("../img/laughting-buddha-fit-nobg.png");
+    background-image: url("../img/cards/laughting-buddha-fit-nobg.png");
     background-color: #fdde2d70;
     border: 1px solid #AA0000;
     border-radius: 10px;
     margin: 17px;
 }
 
-ul li:first-of-type{
-    margin-left: 10%;
-}
-
 body {
     background-color: #AA000d30;
 }
 
-@font-face{
+@font-face {
     font-family: 'Kramer';
     src: url('../font/KramerRegular.ttf');
 }
@@ -34,8 +36,8 @@ h1 {
     text-shadow: #AA000d60 0px 0px 5px;
 }
 
-h1::first-letter{
-    font-size:125%;
+h1::first-letter {
+    font-size: 125%;
     font-family: Kramer;
     color: #AA000d60;
     text-shadow: #F6C700 1px 1px 15px;
@@ -47,8 +49,9 @@ h1::first-letter{
     margin: 40px auto 47px auto;
 }
 
-@media screen and (max-width: 335px){
+@media screen and (max-width: 500px) {
     ul {
+        position: initial;
         display: flex;
         flex-direction: column;
         align-items: center;
