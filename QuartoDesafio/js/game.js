@@ -3,7 +3,7 @@ var initGame = () => filterCards(howMany());
 var howMany = () => prompt("With how many cards you wish to play with?");
 
 var filterCards = number =>
-    (number % 2 === 0 && (number > 4 && number <= 14)) ?
+    (number % 2 === 0 && (number >= 4 && number <= 14)) ?
     createCards(number) :
     initGame();
 
@@ -59,25 +59,42 @@ const cards = querierAll("li");
 var remover = e => c => e.classList.remove(c);
 var cons = e => c => e.classList.add(c);
 
-function select(e) {
-    let active = querierAll(".active");
+var twoActiveP = (active) => {
     cards.forEach((card) => {
         if (active.length === 2) {
             permanentP(active);
             active.forEach(a => remover(a)("active"));
         };
     });
+};
+
+function select(e) {
+    let active = querierAll(".active");
+    // twoActiveP(active);
+    setTimeout(twoActiveP(active), 30000);
     cons(this)("active");
-    active = querierAll(".active");
+    active = querierAll(".active");   
     if (endP()) {
         alert("You did it!");
         againP();
     }
+    var unturnP = () => twoActiveP(active);
+    setTimeout(unturnP, 500);
 };
 
-cards.forEach((card) => {
-    card.addEventListener("click", select);
-});
+var endInteration = () => {
+    cards.forEach((card) => {
+        card.removeEventListener("click", select);
+    });
+};
+
+var beginInteration = () => {
+    cards.forEach((card) => {
+        card.addEventListener("click", select);
+    });
+};
+
+beginInteration();
 
 var test_changeActive = property => query =>
     (query[0].id === query[1].id ?
@@ -89,4 +106,9 @@ var endP = () => (cards.length === querierAll(".permanent").length + 2);
 var againP = () =>
     (prompt("Wanna play again? (yes/no)") === "yes") ?
     location.reload() :
-    alert("Ok. You will be on stand by! Or refesh the browser to play again.");
+    endInterationAlert("Ok. You will be on stand by! Or refesh the browser to play again.");
+
+var endInterationAlert = message => {
+    alert(message);
+    endInteration();
+};
