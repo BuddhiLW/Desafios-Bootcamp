@@ -11,6 +11,14 @@ var filterCards = number =>
 
 var querier = (e) => document.querySelector(e);
 var populateWith = (e) => (li) => e.appendChild(li.cloneNode(true));
+var addTime = () => {
+    var span = querier("span");
+    var time =parseFloat(span.textContent);
+    time = time + 1;
+    span.innerHTML = time;
+};
+
+var initTimer = () => setInterval(addTime,1000);
 
 var ul = querier('ul');
 let li = document.createElement('li');
@@ -34,6 +42,7 @@ var populate = (number) => {
                 }
             };
             assignIdAll(number);
+            initTimer();
         }
     }
 };
@@ -70,7 +79,6 @@ var twoActiveP = (active) => {
 	if (active.length === 2) {
 	    permanentP(active);
 	    active.forEach(a => remover(a)("active"));
-	    // countPlay();
 	};
     });
 };
