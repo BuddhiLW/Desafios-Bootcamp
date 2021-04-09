@@ -5,6 +5,7 @@ ul {
     margin: auto;
     position: absolute;
     left: 10%;
+    right: 10 wv;
     top: calc(56px + 17px + 10px + 17px + 30px);
 }
 
@@ -17,6 +18,9 @@ li {
     border: 1px solid #AA0000;
     border-radius: 10px;
     margin: 17px;
+    transition: all .5s;
+    transform-style: preserve-3d;
+    transform: rotateY(-180deg);
 }
 
 body {
