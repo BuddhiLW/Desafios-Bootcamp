@@ -1,3 +1,5 @@
+var plays = 0;
+
 var initGame = () => filterCards(howMany());
 
 var howMany = () => prompt("With how many cards you wish to play with?");
@@ -59,27 +61,32 @@ const cards = querierAll("li");
 var remover = e => c => e.classList.remove(c);
 var cons = e => c => e.classList.add(c);
 
+function countPlay(){
+    plays += 1;
+}
+
 var twoActiveP = (active) => {
     cards.forEach((card) => {
-        if (active.length === 2) {
-            permanentP(active);
-            active.forEach(a => remover(a)("active"));
-        };
+	if (active.length === 2) {
+	    permanentP(active);
+	    active.forEach(a => remover(a)("active"));
+	    // countPlay();
+	};
     });
 };
 
 function select(e) {
     let active = querierAll(".active");
-    // twoActiveP(active);
     setTimeout(twoActiveP(active), 30000);
     cons(this)("active");
     active = querierAll(".active");   
     if (endP()) {
-        alert("You did it!");
+        alert("You did it, with " + (plays+2)/2 + " plays!");
         againP();
     }
     var unturnP = () => twoActiveP(active);
     setTimeout(unturnP, 1000);
+    countPlay();
 };
 
 var endInteration = () => {
@@ -98,8 +105,8 @@ beginInteration();
 
 var test_changeActive = property => query =>
     (query[0].id === query[1].id ?
-        query.forEach(q => cons(q)(property)) :
-        query.forEach(q => remover(q)(property)));
+     query.forEach(q => cons(q)(property)) :
+     query.forEach(q => remover(q)(property)));
 
 var permanentP = test_changeActive("permanent");
 var endP = () => (cards.length === querierAll(".permanent").length + 2);
